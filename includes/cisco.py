@@ -115,7 +115,7 @@ class cisco(remote.remote):
             if command in recvBuffer:
                 return True
             time.sleep(0.1)
-        logging.warning("Command was not received by remote console. command={0}, attempt={1}".format(command),attempt)
+        logging.warning("Command was not received by remote console. command={0}, attempt={1}".format(command,attempt))
         return self.sendCommand(command,attempt+1)
         
     def command(self, command, args=[], elevate=False, runAs=None, timeout=5):
